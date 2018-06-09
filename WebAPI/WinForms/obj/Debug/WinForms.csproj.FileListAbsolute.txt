@@ -1,0 +1,16 @@
+c:\Users\hong2_000\documents\visual studio 2015\Projects\WebAPI\WinForms\obj\Debug\WinForms.csprojResolveAssemblyReference.cache
+c:\Users\hong2_000\documents\visual studio 2015\Projects\WebAPI\WinForms\obj\Debug\WinForms.Properties.Resources.resources
+c:\Users\hong2_000\documents\visual studio 2015\Projects\WebAPI\WinForms\obj\Debug\WinForms.csproj.GenerateResource.Cache
+c:\Users\hong2_000\documents\visual studio 2015\Projects\WebAPI\WinForms\bin\Debug\WinForms.exe.config
+c:\Users\hong2_000\documents\visual studio 2015\Projects\WebAPI\WinForms\bin\Debug\WinForms.exe
+c:\Users\hong2_000\documents\visual studio 2015\Projects\WebAPI\WinForms\bin\Debug\WinForms.pdb
+c:\Users\hong2_000\documents\visual studio 2015\Projects\WebAPI\WinForms\bin\Debug\WebAPIData.dll
+c:\Users\hong2_000\documents\visual studio 2015\Projects\WebAPI\WinForms\bin\Debug\WebAPIData.pdb
+c:\Users\hong2_000\documents\visual studio 2015\Projects\WebAPI\WinForms\obj\Debug\WinForms.exe
+c:\Users\hong2_000\documents\visual studio 2015\Projects\WebAPI\WinForms\obj\Debug\WinForms.pdb
+C:\Users\hong2_000\Documents\Visual Studio 2015\Projects\WebAPI\WinForms\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hong2_000\Documents\Visual Studio 2015\Projects\WebAPI\WinForms\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\hong2_000\Documents\Visual Studio 2015\Projects\WebAPI\WinForms\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hong2_000\Documents\Visual Studio 2015\Projects\WebAPI\WinForms\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\hong2_000\Documents\Visual Studio 2015\Projects\WebAPI\WinForms\obj\Debug\WinForms.Form1.resources
+C:\Users\hong2_000\Documents\Visual Studio 2015\Projects\WebAPI\WinForms\obj\Debug\WinForms.Forms.AddNhanVien.resources
