@@ -22,18 +22,18 @@
         }
     </style>
 </head>
-<body>
-    <div id="login-div"> 
+<body style="background:#DFECF5;">
+    <div id="login-div" style="background:#b6ff00"> 
         @using (Html.BeginForm("Autherize","Login",FormMethod.Post))
         {
             <table>
                 <tr>
                     <td></td>
-                    <td style="text-decoration:underline">App Name</td>
+                    <td style="text-decoration:underline">ĐĂNG NHẬP HỆ THỐNG</td>
                 </tr>
                 <tr>
                     <td>
-                        @Html.LabelFor(model => model.Username)
+                        Tên đăng nhập
                     </td>
                     <td>
                         @Html.EditorFor(model => model.Username)
@@ -47,7 +47,7 @@
                 </tr>
                 <tr>
                     <td>
-                        @Html.LabelFor(model => model.Password)
+                        Mật khẩu
                     </td>
                     <td>
                         @Html.EditorFor(model => model.Password)
@@ -68,8 +68,8 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="name" value="Login" />
-                        <input type="reset" name="name" value="Clear" />
+                        <input type="submit" name="name" value="Đăng nhập" />
+                        <input type="reset" name="name" value="Thoát" />
                     </td>
                 </tr>
 

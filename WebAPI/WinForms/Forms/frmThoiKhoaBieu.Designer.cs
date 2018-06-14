@@ -163,6 +163,7 @@
             // 
             // txtMaTKB
             // 
+            this.txtMaTKB.Enabled = false;
             this.txtMaTKB.Location = new System.Drawing.Point(103, 57);
             this.txtMaTKB.Name = "txtMaTKB";
             this.txtMaTKB.Size = new System.Drawing.Size(238, 21);
@@ -326,7 +327,7 @@
             this.ClientSize = new System.Drawing.Size(1165, 548);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmThoiKhoaBieu";
-            this.Text = "frmThoiKhoaBieu";
+            this.Text = "Quản lý thời khóa biểu";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
