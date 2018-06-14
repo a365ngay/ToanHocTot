@@ -12,16 +12,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ChiTietDDs">
-      <EntityTypeMapping TypeName="ToanHocTotModel.ChiTietDD">
-        <MappingFragment StoreEntitySet="ChiTietDD">
-          <ScalarProperty Name="IDDiemDanh" ColumnName="IDDiemDanh" />
-          <ScalarProperty Name="MaHS" ColumnName="MaHS" />
-          <ScalarProperty Name="TinhTrangDD" ColumnName="TinhTrangDD" />
-          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CoSoes">
       <EntityTypeMapping TypeName="ToanHocTotModel.CoSo">
         <MappingFragment StoreEntitySet="CoSo">

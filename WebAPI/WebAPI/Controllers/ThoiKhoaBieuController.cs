@@ -30,6 +30,7 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        
         public IHttpActionResult Put([FromBody] ThoiKhoaBieu x)
         {
             if (!ModelState.IsValid)
@@ -38,12 +39,24 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        [Route("api/ThoiKhoaBieu/Del/{MaTKB}")]
+        [HttpDelete]
         public IHttpActionResult Delete([FromUri] string MaTKB)
         {
             if (MaTKB == "" || MaTKB == null)
                 return BadRequest("Not a valid thoi khoa bieu");
             ThoiKhoaBieuDAO.Instance.Delete(MaTKB);
             return Ok();
+        }
+        [HttpGet]
+        public IHttpActionResult TimKiemThoiKhoaBieu([FromUri]string MaTKB)
+        {
+            List<ThoiKhoaBieu> item = ThoiKhoaBieuDAO.Instance.TimKiemThoiKhoaBieu(MaTKB);
+            if (item.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(item);
         }
     }
 }

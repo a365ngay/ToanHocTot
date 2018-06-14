@@ -14,19 +14,11 @@ namespace WebMVC.Models
     
     public partial class GVDiemDanhH
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GVDiemDanhH()
-        {
-            this.ChiTietDDs = new HashSet<ChiTietDD>();
-        }
-    
         public int IDDiemDanh { get; set; }
         public string MaNV { get; set; }
         public string Malop { get; set; }
         public Nullable<System.DateTime> NgayDD { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDD> ChiTietDDs { get; set; }
         public virtual NhanVien NhanVien { get; set; }
     }
 }

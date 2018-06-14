@@ -52,7 +52,7 @@ namespace WebAPIData.DAO
 
         public int Create(string MaTKB, string NgayHoc, string ThoiGianHoc)
         {
-            string query = $"INSERT dbo.ThoiKhoaBieu VALUES  ( '{MaTKB}',  '{NgayHoc}',  N'{ThoiGianHoc}')";
+            string query =  $"exec dbo.them_tkb '{MaTKB}',  N'{NgayHoc}',  N'{ThoiGianHoc}' ";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -61,18 +61,32 @@ namespace WebAPIData.DAO
 
         public int Update(string MaTKB, string NgayHoc, string ThoiGianHoc)
         {
-            string query = $"UPDATE dbo.ThoiKhoaBieu SET NgayHoc = '{NgayHoc}', ThoiGianHoc = N'{ThoiGianHoc}' WHERE MaTKB = '{MaTKB}'";
+            string query = $" exec dbo.sua_tkb '{MaTKB}',  N'{NgayHoc}',  N'{ThoiGianHoc}' ";
             DataProvider.Instance.ExecuteNonQuery(query);
             return 1;
         }
 
         public int Delete(string MaTKB)
         {
-            string query = $"DELETE dbo.ThoiKhoaBieu WHERE MaTKB = '{MaTKB}'";
+            string query = $" exec dbo.xoa_tkb '{MaTKB}' ";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
             return 1;
+        }
+        public List<ThoiKhoaBieu> TimKiemThoiKhoaBieu(string MaTKB)
+        {
+            List<ThoiKhoaBieu> list = new List<ThoiKhoaBieu>();
+            string query = $"SELECT * FROM dbo.view_thoikhoabieu";
+            //khi view bảng phức hợp 
+            //string query = $"SELECT * FROM tên_bảng_view";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                ThoiKhoaBieu obj = new ThoiKhoaBieu(item);
+                list.Add(obj);
+            }
+            return list;
         }
     }
 }

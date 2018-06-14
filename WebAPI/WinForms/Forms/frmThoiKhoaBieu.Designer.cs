@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txtNH = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtTGH = new System.Windows.Forms.TextBox();
+            this.txtTGH = new System.Windows.Forms.ComboBox();
+            this.txtNH = new System.Windows.Forms.ComboBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
@@ -40,8 +40,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtTimkiem = new System.Windows.Forms.TextBox();
+            this.cbTGH = new System.Windows.Forms.ComboBox();
+            this.cbNH = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MaTKB = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +69,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.txtNH);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
             // 
             // splitContainer1.Panel2
@@ -77,16 +78,10 @@
             this.splitContainer1.SplitterDistance = 367;
             this.splitContainer1.TabIndex = 0;
             // 
-            // txtNH
-            // 
-            this.txtNH.Location = new System.Drawing.Point(103, 125);
-            this.txtNH.Name = "txtNH";
-            this.txtNH.Size = new System.Drawing.Size(238, 21);
-            this.txtNH.TabIndex = 7;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtTGH);
+            this.groupBox1.Controls.Add(this.txtNH);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnSua);
@@ -103,10 +98,39 @@
             // 
             // txtTGH
             // 
+            this.txtTGH.FormattingEnabled = true;
+            this.txtTGH.Items.AddRange(new object[] {
+            "18h-19h30",
+            "19h45-21h15"});
             this.txtTGH.Location = new System.Drawing.Point(103, 192);
             this.txtTGH.Name = "txtTGH";
             this.txtTGH.Size = new System.Drawing.Size(238, 21);
             this.txtTGH.TabIndex = 8;
+            this.txtTGH.Text = "18h-19h30";
+            // 
+            // txtNH
+            // 
+            this.txtNH.FormattingEnabled = true;
+            this.txtNH.Items.AddRange(new object[] {
+            "Thứ 2, Thứ 4",
+            "Thứ 2, Thứ 5",
+            "Thứ 2, Thứ 6",
+            "Thứ 2, Thứ 7",
+            "Thứ 3, Thứ 5",
+            "Thứ 3, Thứ 6",
+            "Thứ 3, Thứ 7",
+            "Thứ 3, Chủ Nhật",
+            "Thứ 4, Thứ 6",
+            "Thứ 4, Thứ 7",
+            "Thứ 4, Chủ Nhật",
+            "Thứ 5, Thứ 7",
+            "Thứ 5, Chủ Nhật",
+            "Thứ 6, Chủ Nhật"});
+            this.txtNH.Location = new System.Drawing.Point(103, 130);
+            this.txtNH.Name = "txtNH";
+            this.txtNH.Size = new System.Drawing.Size(238, 21);
+            this.txtNH.TabIndex = 7;
+            this.txtNH.Text = "Thứ 2, Thứ 4";
             // 
             // btnXoa
             // 
@@ -116,6 +140,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // label1
             // 
@@ -134,6 +159,7 @@
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // txtMaTKB
             // 
@@ -179,8 +205,10 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.label5);
             this.splitContainer2.Panel1.Controls.Add(this.label4);
-            this.splitContainer2.Panel1.Controls.Add(this.txtTimkiem);
+            this.splitContainer2.Panel1.Controls.Add(this.cbTGH);
+            this.splitContainer2.Panel1.Controls.Add(this.cbNH);
             this.splitContainer2.Panel1.Controls.Add(this.button1);
             // 
             // splitContainer2.Panel2
@@ -190,30 +218,71 @@
             this.splitContainer2.SplitterDistance = 162;
             this.splitContainer2.TabIndex = 0;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(322, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Thời gian học";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 62);
+            this.label4.Location = new System.Drawing.Point(19, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Nhập thông tin tìm kiếm";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Ngày học";
             // 
-            // txtTimkiem
+            // cbTGH
             // 
-            this.txtTimkiem.Location = new System.Drawing.Point(201, 55);
-            this.txtTimkiem.Name = "txtTimkiem";
-            this.txtTimkiem.Size = new System.Drawing.Size(378, 21);
-            this.txtTimkiem.TabIndex = 1;
+            this.cbTGH.FormattingEnabled = true;
+            this.cbTGH.Items.AddRange(new object[] {
+            "(none)",
+            "18h-19h30",
+            "19h45-21h15"});
+            this.cbTGH.Location = new System.Drawing.Point(445, 33);
+            this.cbTGH.Name = "cbTGH";
+            this.cbTGH.Size = new System.Drawing.Size(121, 21);
+            this.cbTGH.TabIndex = 2;
+            this.cbTGH.Text = "(none)";
+            // 
+            // cbNH
+            // 
+            this.cbNH.FormattingEnabled = true;
+            this.cbNH.Items.AddRange(new object[] {
+            "(none)",
+            "Thứ 2, Thứ 4",
+            "Thứ 2, Thứ 5",
+            "Thứ 2, Thứ 6",
+            "Thứ 2, Thứ 7",
+            "Thứ 3, Thứ 5",
+            "Thứ 3, Thứ 6",
+            "Thứ 3, Thứ 7",
+            "Thứ 3, Chủ Nhật",
+            "Thứ 4, Thứ 6",
+            "Thứ 4, Thứ 7",
+            "Thứ 4, Chủ Nhật",
+            "Thứ 5, Thứ 7",
+            "Thứ 5, Chủ Nhật",
+            "Thứ 6, Chủ Nhật"});
+            this.cbNH.Location = new System.Drawing.Point(100, 33);
+            this.cbNH.Name = "cbNH";
+            this.cbNH.Size = new System.Drawing.Size(121, 21);
+            this.cbNH.TabIndex = 1;
+            this.cbNH.Text = "(none)";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(504, 97);
+            this.button1.Location = new System.Drawing.Point(445, 108);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Tìm kiếm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -227,6 +296,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(794, 379);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // MaTKB
             // 
@@ -258,7 +328,6 @@
             this.Name = "frmThoiKhoaBieu";
             this.Text = "frmThoiKhoaBieu";
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -277,9 +346,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TextBox txtNH;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTGH;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSua;
@@ -288,12 +355,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTimkiem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTKB;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianHoc;
+        private System.Windows.Forms.ComboBox txtTGH;
+        private System.Windows.Forms.ComboBox txtNH;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbTGH;
+        private System.Windows.Forms.ComboBox cbNH;
     }
 }

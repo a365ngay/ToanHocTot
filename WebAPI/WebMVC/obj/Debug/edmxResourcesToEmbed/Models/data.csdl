@@ -11,18 +11,6 @@
     <Property Name="DiemYThuc" Type="Double" />
     <NavigationProperty Name="HocSinh" Relationship="Self.FK_BangDiem_HocSinh" FromRole="BangDiem" ToRole="HocSinh" />
   </EntityType>
-  <EntityType Name="ChiTietDD">
-    <Key>
-      <PropertyRef Name="IDDiemDanh" />
-      <PropertyRef Name="MaHS" />
-    </Key>
-    <Property Name="IDDiemDanh" Type="Int32" Nullable="false" />
-    <Property Name="MaHS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="TinhTrangDD" Type="Boolean" />
-    <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="GVDiemDanhH" Relationship="Self.FK_ChiTietDD_GVDiemDanhHS" FromRole="ChiTietDD" ToRole="GVDiemDanhHS" />
-    <NavigationProperty Name="HocSinh" Relationship="Self.FK_ChiTietDD_HocSinh" FromRole="ChiTietDD" ToRole="HocSinh" />
-  </EntityType>
   <EntityType Name="CoSo">
     <Key>
       <PropertyRef Name="MaCS" />
@@ -42,7 +30,6 @@
     <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Malop" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="NgayDD" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="ChiTietDDs" Relationship="Self.FK_ChiTietDD_GVDiemDanhHS" FromRole="GVDiemDanhHS" ToRole="ChiTietDD" />
     <NavigationProperty Name="NhanVien" Relationship="Self.FK_GVDiemDanhHS_NhanVien" FromRole="GVDiemDanhHS" ToRole="NhanVien" />
   </EntityType>
   <EntityType Name="HoaDon">
@@ -68,7 +55,6 @@
     <Property Name="Truong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Loptt" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="BangDiems" Relationship="Self.FK_BangDiem_HocSinh" FromRole="HocSinh" ToRole="BangDiem" />
-    <NavigationProperty Name="ChiTietDDs" Relationship="Self.FK_ChiTietDD_HocSinh" FromRole="HocSinh" ToRole="ChiTietDD" />
     <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDon_HocSinh" FromRole="HocSinh" ToRole="HoaDon" />
     <NavigationProperty Name="Loptt1" Relationship="Self.FK_HocSinh_Loptt" FromRole="HocSinh" ToRole="Loptt" />
     <NavigationProperty Name="PhuHuynhs" Relationship="Self.FK_PhuHuynh_HocSinh" FromRole="HocSinh" ToRole="PhuHuynh" />
@@ -160,30 +146,6 @@
         <PropertyRef Name="MaHS" />
       </Principal>
       <Dependent Role="BangDiem">
-        <PropertyRef Name="MaHS" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ChiTietDD_GVDiemDanhHS">
-    <End Role="GVDiemDanhHS" Type="Self.GVDiemDanhH" Multiplicity="1" />
-    <End Role="ChiTietDD" Type="Self.ChiTietDD" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GVDiemDanhHS">
-        <PropertyRef Name="IDDiemDanh" />
-      </Principal>
-      <Dependent Role="ChiTietDD">
-        <PropertyRef Name="IDDiemDanh" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ChiTietDD_HocSinh">
-    <End Role="HocSinh" Type="Self.HocSinh" Multiplicity="1" />
-    <End Role="ChiTietDD" Type="Self.ChiTietDD" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HocSinh">
-        <PropertyRef Name="MaHS" />
-      </Principal>
-      <Dependent Role="ChiTietDD">
         <PropertyRef Name="MaHS" />
       </Dependent>
     </ReferentialConstraint>
@@ -310,7 +272,6 @@
   </Association>
   <EntityContainer Name="ToanHocTotEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BangDiems" EntityType="Self.BangDiem" />
-    <EntitySet Name="ChiTietDDs" EntityType="Self.ChiTietDD" />
     <EntitySet Name="CoSoes" EntityType="Self.CoSo" />
     <EntitySet Name="GVDiemDanhHS" EntityType="Self.GVDiemDanhH" />
     <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
@@ -325,14 +286,6 @@
     <AssociationSet Name="FK_BangDiem_HocSinh" Association="Self.FK_BangDiem_HocSinh">
       <End Role="HocSinh" EntitySet="HocSinhs" />
       <End Role="BangDiem" EntitySet="BangDiems" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ChiTietDD_GVDiemDanhHS" Association="Self.FK_ChiTietDD_GVDiemDanhHS">
-      <End Role="GVDiemDanhHS" EntitySet="GVDiemDanhHS" />
-      <End Role="ChiTietDD" EntitySet="ChiTietDDs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ChiTietDD_HocSinh" Association="Self.FK_ChiTietDD_HocSinh">
-      <End Role="HocSinh" EntitySet="HocSinhs" />
-      <End Role="ChiTietDD" EntitySet="ChiTietDDs" />
     </AssociationSet>
     <AssociationSet Name="FK_Loptt_CoSo" Association="Self.FK_Loptt_CoSo">
       <End Role="CoSo" EntitySet="CoSoes" />
