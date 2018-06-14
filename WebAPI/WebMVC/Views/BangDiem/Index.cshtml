@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebMVC.Models.BangDiem>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["Username"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<h4>Thông tin điểm học tập và rèn luyện</h4>
+<table class="table">
+    <tr>
+        <th>
+            Ngày
+        </th>
+        <th>
+            Điểm học tập
+        </th>
+        <th>
+            Điểm ý thức
+        </th>
+        <th>
+            Tên học sinh
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiemHocTap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiemYThuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HocSinh.TenHS)
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    <div class="bd-left" style="float:left">
+        <img src="@Url.Action("CharterColum")" alt="Chart"
+    </div>
+    <div class="bd-right" style="float:right">
+        <img src="@Url.Action("CharterColum1")" alt="Chart"
+    </div>
+</div>

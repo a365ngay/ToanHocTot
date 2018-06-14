@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTGH = new System.Windows.Forms.ComboBox();
+            this.txtNH = new System.Windows.Forms.ComboBox();
             this.txtMaTKB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtTGH = new System.Windows.Forms.ComboBox();
-            this.txtNH = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,8 +55,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm thông tin";
             // 
+            // txtTGH
+            // 
+            this.txtTGH.FormattingEnabled = true;
+            this.txtTGH.Items.AddRange(new object[] {
+            "18h-19h30",
+            "19h45-21h15"});
+            this.txtTGH.Location = new System.Drawing.Point(111, 190);
+            this.txtTGH.Name = "txtTGH";
+            this.txtTGH.Size = new System.Drawing.Size(180, 21);
+            this.txtTGH.TabIndex = 10;
+            this.txtTGH.Text = "18h-19h30";
+            // 
+            // txtNH
+            // 
+            this.txtNH.FormattingEnabled = true;
+            this.txtNH.Items.AddRange(new object[] {
+            "Thứ 2, Thứ 4",
+            "Thứ 2, Thứ 5",
+            "Thứ 2, Thứ 6",
+            "Thứ 2, Thứ 7",
+            "Thứ 3, Thứ 5",
+            "Thứ 3, Thứ 6",
+            "Thứ 3, Thứ 7",
+            "Thứ 3, Chủ Nhật",
+            "Thứ 4, Thứ 6",
+            "Thứ 4, Thứ 7",
+            "Thứ 4, Chủ Nhật",
+            "Thứ 5, Thứ 7",
+            "Thứ 5, Chủ Nhật",
+            "Thứ 6, Chủ Nhật"});
+            this.txtNH.Location = new System.Drawing.Point(111, 128);
+            this.txtNH.Name = "txtNH";
+            this.txtNH.Size = new System.Drawing.Size(180, 21);
+            this.txtNH.TabIndex = 9;
+            this.txtNH.Text = "Thứ 2, Thứ 4";
+            // 
             // txtMaTKB
             // 
+            this.txtMaTKB.Enabled = false;
             this.txtMaTKB.Location = new System.Drawing.Point(111, 62);
             this.txtMaTKB.Name = "txtMaTKB";
             this.txtMaTKB.Size = new System.Drawing.Size(180, 21);
@@ -111,42 +148,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // txtTGH
-            // 
-            this.txtTGH.FormattingEnabled = true;
-            this.txtTGH.Items.AddRange(new object[] {
-            "18h-19h30",
-            "19h45-21h15"});
-            this.txtTGH.Location = new System.Drawing.Point(111, 190);
-            this.txtTGH.Name = "txtTGH";
-            this.txtTGH.Size = new System.Drawing.Size(180, 21);
-            this.txtTGH.TabIndex = 10;
-            this.txtTGH.Text = "18h-19h30";
-            // 
-            // txtNH
-            // 
-            this.txtNH.FormattingEnabled = true;
-            this.txtNH.Items.AddRange(new object[] {
-            "Thứ 2, Thứ 4",
-            "Thứ 2, Thứ 5",
-            "Thứ 2, Thứ 6",
-            "Thứ 2, Thứ 7",
-            "Thứ 3, Thứ 5",
-            "Thứ 3, Thứ 6",
-            "Thứ 3, Thứ 7",
-            "Thứ 3, Chủ Nhật",
-            "Thứ 4, Thứ 6",
-            "Thứ 4, Thứ 7",
-            "Thứ 4, Chủ Nhật",
-            "Thứ 5, Thứ 7",
-            "Thứ 5, Chủ Nhật",
-            "Thứ 6, Chủ Nhật"});
-            this.txtNH.Location = new System.Drawing.Point(111, 128);
-            this.txtNH.Name = "txtNH";
-            this.txtNH.Size = new System.Drawing.Size(180, 21);
-            this.txtNH.TabIndex = 9;
-            this.txtNH.Text = "Thứ 2, Thứ 4";
-            // 
             // ThemThoiKhoaBieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,7 +158,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ThemThoiKhoaBieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ThemThoiKhoaBieu";
+            this.Text = "Thêm mới thời khóa biểu";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
