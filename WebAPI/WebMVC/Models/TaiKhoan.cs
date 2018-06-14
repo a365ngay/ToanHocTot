@@ -11,21 +11,16 @@ namespace WebMVC.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TaiKhoan
     {
-        [DisplayName("User Name")]
-        [Required(ErrorMessage ="nhap username")]
         public string Username { get; set; }
-        [DataType(DataType.Password)]
-        [Required(ErrorMessage = "nhap paswword")]
         public string Password { get; set; }
         public string IDUser { get; set; }
         public string IDQuyen { get; set; }
-    
+        public string LoginErrorMessage;
+
+
         public virtual Quyen Quyen { get; set; }
-        public string LoginErrorMessage { get; set; }
     }
 }

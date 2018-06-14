@@ -18,7 +18,6 @@ namespace WebMVC.Models
         public HocSinh()
         {
             this.BangDiems = new HashSet<BangDiem>();
-            this.ChiTietDDs = new HashSet<ChiTietDD>();
             this.HoaDons = new HashSet<HoaDon>();
             this.PhuHuynhs = new HashSet<PhuHuynh>();
         }
@@ -31,8 +30,6 @@ namespace WebMVC.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BangDiem> BangDiems { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDD> ChiTietDDs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }
         public virtual Loptt Loptt1 { get; set; }

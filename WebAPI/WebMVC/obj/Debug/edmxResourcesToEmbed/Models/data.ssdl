@@ -10,16 +10,14 @@
     <Property Name="DiemHocTap" Type="float" />
     <Property Name="DiemYThuc" Type="float" />
   </EntityType>
-  <EntityType Name="ChiTietDD">
-    <Key>
-      <PropertyRef Name="IDDiemDanh" />
-      <PropertyRef Name="MaHS" />
-    </Key>
-    <Property Name="IDDiemDanh" Type="int" Nullable="false" />
-    <Property Name="MaHS" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="TinhTrangDD" Type="bit" />
-    <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
-  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ToanHocTot.dbo.ChiTietDD' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ChiTietDD">
+          <Property Name="IDDiemDanh" Type="int" />
+          <Property Name="MaHS" Type="nchar" MaxLength="10" />
+          <Property Name="TinhTrangDD" Type="bit" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
   <EntityType Name="CoSo">
     <Key>
       <PropertyRef Name="MaCS" />
@@ -138,30 +136,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ChiTietDD_GVDiemDanhHS">
-    <End Role="GVDiemDanhHS" Type="Self.GVDiemDanhHS" Multiplicity="1" />
-    <End Role="ChiTietDD" Type="Self.ChiTietDD" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GVDiemDanhHS">
-        <PropertyRef Name="IDDiemDanh" />
-      </Principal>
-      <Dependent Role="ChiTietDD">
-        <PropertyRef Name="IDDiemDanh" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ChiTietDD_HocSinh">
-    <End Role="HocSinh" Type="Self.HocSinh" Multiplicity="1" />
-    <End Role="ChiTietDD" Type="Self.ChiTietDD" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HocSinh">
-        <PropertyRef Name="MaHS" />
-      </Principal>
-      <Dependent Role="ChiTietDD">
-        <PropertyRef Name="MaHS" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <!--Errors Found During Generation:
+error 6004: The table 'ToanHocTot.dbo.ChiTietDD' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_ChiTietDD_GVDiemDanhHS" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ToanHocTot.dbo.ChiTietDD' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_ChiTietDD_HocSinh" />-->
   <Association Name="FK_GVDiemDanhHS_NhanVien">
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
     <End Role="GVDiemDanhHS" Type="Self.GVDiemDanhHS" Multiplicity="*" />
@@ -284,7 +264,6 @@
   </Association>
   <EntityContainer Name="ToanHocTotModelStoreContainer">
     <EntitySet Name="BangDiem" EntityType="Self.BangDiem" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ChiTietDD" EntityType="Self.ChiTietDD" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CoSo" EntityType="Self.CoSo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GVDiemDanhHS" EntityType="Self.GVDiemDanhHS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
@@ -299,14 +278,6 @@
     <AssociationSet Name="FK_BangDiem_HocSinh" Association="Self.FK_BangDiem_HocSinh">
       <End Role="HocSinh" EntitySet="HocSinh" />
       <End Role="BangDiem" EntitySet="BangDiem" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ChiTietDD_GVDiemDanhHS" Association="Self.FK_ChiTietDD_GVDiemDanhHS">
-      <End Role="GVDiemDanhHS" EntitySet="GVDiemDanhHS" />
-      <End Role="ChiTietDD" EntitySet="ChiTietDD" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ChiTietDD_HocSinh" Association="Self.FK_ChiTietDD_HocSinh">
-      <End Role="HocSinh" EntitySet="HocSinh" />
-      <End Role="ChiTietDD" EntitySet="ChiTietDD" />
     </AssociationSet>
     <AssociationSet Name="FK_GVDiemDanhHS_NhanVien" Association="Self.FK_GVDiemDanhHS_NhanVien">
       <End Role="NhanVien" EntitySet="NhanVien" />

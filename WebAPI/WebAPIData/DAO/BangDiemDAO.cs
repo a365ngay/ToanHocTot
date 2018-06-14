@@ -41,7 +41,7 @@ namespace WebAPIData.DAO
         {
             List<BangDiem> list = new List<BangDiem>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.BangDiem");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.view_bangdiem");
             foreach (DataRow item in data.Rows)
             {
                 BangDiem obj = new BangDiem(item);
@@ -52,7 +52,7 @@ namespace WebAPIData.DAO
 
         public int Create(string MaBangDiem, string MaHS, string Ngay, double DiemHocTap, double DiemYThuc)
         {
-            string query = $"INSERT dbo.BangDiem VALUES  ( '{MaBangDiem}',  '{MaHS}',  '{Ngay}',  {DiemHocTap},  {DiemYThuc}  )";
+            string query = $" exec dbo.them_diem '{MaBangDiem}',  '{MaHS}',  '{Ngay}',  {DiemHocTap},  {DiemYThuc}  ";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -61,18 +61,32 @@ namespace WebAPIData.DAO
 
         public int Update(string MaBangDiem, string MaHS, string Ngay, double DiemHocTap, double DiemYThuc)
         {
-            string query = $"UPDATE dbo.BangDiem SET MaHS = '{MaHS}', Ngay = '{Ngay}', DiemHocTap = {DiemHocTap}, DiemYThuc = {DiemYThuc} WHERE MaBangDiem = '{MaBangDiem}'";
+            string query = $"exec dbo.sua_diem '{MaHS}', '{Ngay}', {DiemHocTap}, {DiemYThuc} ";
             DataProvider.Instance.ExecuteNonQuery(query);
             return 1;
         }
 
         public int Delete(string MaBangDiem)
         {
-            string query = $"DELETE dbo.BangDiem WHERE MaBangDiem = '{MaBangDiem}'";
+            string query = $"exec dbo.xoa_diem '{MaBangDiem}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
             return 1;
+        }
+        public List<BangDiem> TimKiemBangDiem(string MaBangDiem)
+        {
+            List<BangDiem> list = new List<BangDiem>();
+            string query = $"SELECT * FROM dbo.view_bangdiem";
+            //khi view bảng phức hợp 
+            //string query = $"SELECT * FROM tên_bảng_view";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                BangDiem obj = new BangDiem(item);
+                list.Add(obj);
+            }
+            return list;
         }
     }
 }

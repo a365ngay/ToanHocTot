@@ -26,7 +26,6 @@ namespace WebMVC.Models
         }
     
         public virtual DbSet<BangDiem> BangDiems { get; set; }
-        public virtual DbSet<ChiTietDD> ChiTietDDs { get; set; }
         public virtual DbSet<CoSo> CoSoes { get; set; }
         public virtual DbSet<GVDiemDanhH> GVDiemDanhHS { get; set; }
         public virtual DbSet<HoaDon> HoaDons { get; set; }

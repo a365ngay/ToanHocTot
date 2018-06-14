@@ -15,16 +15,14 @@
           <Property Name="DiemHocTap" Type="float" />
           <Property Name="DiemYThuc" Type="float" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'ToanHocTot.dbo.ChiTietDD' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="ChiTietDD">
-          <Key>
-            <PropertyRef Name="IDDiemDanh" />
-            <PropertyRef Name="MaHS" />
-          </Key>
-          <Property Name="IDDiemDanh" Type="int" Nullable="false" />
-          <Property Name="MaHS" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDDiemDanh" Type="int" />
+          <Property Name="MaHS" Type="nchar" MaxLength="10" />
           <Property Name="TinhTrangDD" Type="bit" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
-        </EntityType>
+        </EntityType>-->
         <EntityType Name="CoSo">
           <Key>
             <PropertyRef Name="MaCS" />
@@ -143,30 +141,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ChiTietDD_GVDiemDanhHS">
-          <End Role="GVDiemDanhHS" Type="Self.GVDiemDanhHS" Multiplicity="1" />
-          <End Role="ChiTietDD" Type="Self.ChiTietDD" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GVDiemDanhHS">
-              <PropertyRef Name="IDDiemDanh" />
-            </Principal>
-            <Dependent Role="ChiTietDD">
-              <PropertyRef Name="IDDiemDanh" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietDD_HocSinh">
-          <End Role="HocSinh" Type="Self.HocSinh" Multiplicity="1" />
-          <End Role="ChiTietDD" Type="Self.ChiTietDD" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HocSinh">
-              <PropertyRef Name="MaHS" />
-            </Principal>
-            <Dependent Role="ChiTietDD">
-              <PropertyRef Name="MaHS" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'ToanHocTot.dbo.ChiTietDD' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_ChiTietDD_GVDiemDanhHS" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'ToanHocTot.dbo.ChiTietDD' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_ChiTietDD_HocSinh" />-->
         <Association Name="FK_GVDiemDanhHS_NhanVien">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
           <End Role="GVDiemDanhHS" Type="Self.GVDiemDanhHS" Multiplicity="*" />
@@ -289,7 +269,6 @@
         </Association>
         <EntityContainer Name="ToanHocTotModelStoreContainer">
           <EntitySet Name="BangDiem" EntityType="Self.BangDiem" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ChiTietDD" EntityType="Self.ChiTietDD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CoSo" EntityType="Self.CoSo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GVDiemDanhHS" EntityType="Self.GVDiemDanhHS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
@@ -304,14 +283,6 @@
           <AssociationSet Name="FK_BangDiem_HocSinh" Association="Self.FK_BangDiem_HocSinh">
             <End Role="HocSinh" EntitySet="HocSinh" />
             <End Role="BangDiem" EntitySet="BangDiem" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietDD_GVDiemDanhHS" Association="Self.FK_ChiTietDD_GVDiemDanhHS">
-            <End Role="GVDiemDanhHS" EntitySet="GVDiemDanhHS" />
-            <End Role="ChiTietDD" EntitySet="ChiTietDD" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietDD_HocSinh" Association="Self.FK_ChiTietDD_HocSinh">
-            <End Role="HocSinh" EntitySet="HocSinh" />
-            <End Role="ChiTietDD" EntitySet="ChiTietDD" />
           </AssociationSet>
           <AssociationSet Name="FK_GVDiemDanhHS_NhanVien" Association="Self.FK_GVDiemDanhHS_NhanVien">
             <End Role="NhanVien" EntitySet="NhanVien" />
@@ -370,18 +341,6 @@
           <Property Name="DiemYThuc" Type="Double" />
           <NavigationProperty Name="HocSinh" Relationship="Self.FK_BangDiem_HocSinh" FromRole="BangDiem" ToRole="HocSinh" />
         </EntityType>
-        <EntityType Name="ChiTietDD">
-          <Key>
-            <PropertyRef Name="IDDiemDanh" />
-            <PropertyRef Name="MaHS" />
-          </Key>
-          <Property Name="IDDiemDanh" Type="Int32" Nullable="false" />
-          <Property Name="MaHS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="TinhTrangDD" Type="Boolean" />
-          <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="GVDiemDanhH" Relationship="Self.FK_ChiTietDD_GVDiemDanhHS" FromRole="ChiTietDD" ToRole="GVDiemDanhHS" />
-          <NavigationProperty Name="HocSinh" Relationship="Self.FK_ChiTietDD_HocSinh" FromRole="ChiTietDD" ToRole="HocSinh" />
-        </EntityType>
         <EntityType Name="CoSo">
           <Key>
             <PropertyRef Name="MaCS" />
@@ -401,7 +360,6 @@
           <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Malop" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="NgayDD" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="ChiTietDDs" Relationship="Self.FK_ChiTietDD_GVDiemDanhHS" FromRole="GVDiemDanhHS" ToRole="ChiTietDD" />
           <NavigationProperty Name="NhanVien" Relationship="Self.FK_GVDiemDanhHS_NhanVien" FromRole="GVDiemDanhHS" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="HoaDon">
@@ -427,7 +385,6 @@
           <Property Name="Truong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Loptt" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="BangDiems" Relationship="Self.FK_BangDiem_HocSinh" FromRole="HocSinh" ToRole="BangDiem" />
-          <NavigationProperty Name="ChiTietDDs" Relationship="Self.FK_ChiTietDD_HocSinh" FromRole="HocSinh" ToRole="ChiTietDD" />
           <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDon_HocSinh" FromRole="HocSinh" ToRole="HoaDon" />
           <NavigationProperty Name="Loptt1" Relationship="Self.FK_HocSinh_Loptt" FromRole="HocSinh" ToRole="Loptt" />
           <NavigationProperty Name="PhuHuynhs" Relationship="Self.FK_PhuHuynh_HocSinh" FromRole="HocSinh" ToRole="PhuHuynh" />
@@ -519,30 +476,6 @@
               <PropertyRef Name="MaHS" />
             </Principal>
             <Dependent Role="BangDiem">
-              <PropertyRef Name="MaHS" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietDD_GVDiemDanhHS">
-          <End Role="GVDiemDanhHS" Type="Self.GVDiemDanhH" Multiplicity="1" />
-          <End Role="ChiTietDD" Type="Self.ChiTietDD" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GVDiemDanhHS">
-              <PropertyRef Name="IDDiemDanh" />
-            </Principal>
-            <Dependent Role="ChiTietDD">
-              <PropertyRef Name="IDDiemDanh" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietDD_HocSinh">
-          <End Role="HocSinh" Type="Self.HocSinh" Multiplicity="1" />
-          <End Role="ChiTietDD" Type="Self.ChiTietDD" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HocSinh">
-              <PropertyRef Name="MaHS" />
-            </Principal>
-            <Dependent Role="ChiTietDD">
               <PropertyRef Name="MaHS" />
             </Dependent>
           </ReferentialConstraint>
@@ -669,7 +602,6 @@
         </Association>
         <EntityContainer Name="ToanHocTotEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BangDiems" EntityType="Self.BangDiem" />
-          <EntitySet Name="ChiTietDDs" EntityType="Self.ChiTietDD" />
           <EntitySet Name="CoSoes" EntityType="Self.CoSo" />
           <EntitySet Name="GVDiemDanhHS" EntityType="Self.GVDiemDanhH" />
           <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
@@ -684,14 +616,6 @@
           <AssociationSet Name="FK_BangDiem_HocSinh" Association="Self.FK_BangDiem_HocSinh">
             <End Role="HocSinh" EntitySet="HocSinhs" />
             <End Role="BangDiem" EntitySet="BangDiems" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietDD_GVDiemDanhHS" Association="Self.FK_ChiTietDD_GVDiemDanhHS">
-            <End Role="GVDiemDanhHS" EntitySet="GVDiemDanhHS" />
-            <End Role="ChiTietDD" EntitySet="ChiTietDDs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietDD_HocSinh" Association="Self.FK_ChiTietDD_HocSinh">
-            <End Role="HocSinh" EntitySet="HocSinhs" />
-            <End Role="ChiTietDD" EntitySet="ChiTietDDs" />
           </AssociationSet>
           <AssociationSet Name="FK_Loptt_CoSo" Association="Self.FK_Loptt_CoSo">
             <End Role="CoSo" EntitySet="CoSoes" />
@@ -748,16 +672,6 @@
                 <ScalarProperty Name="Ngay" ColumnName="Ngay" />
                 <ScalarProperty Name="DiemHocTap" ColumnName="DiemHocTap" />
                 <ScalarProperty Name="DiemYThuc" ColumnName="DiemYThuc" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ChiTietDDs">
-            <EntityTypeMapping TypeName="ToanHocTotModel.ChiTietDD">
-              <MappingFragment StoreEntitySet="ChiTietDD">
-                <ScalarProperty Name="IDDiemDanh" ColumnName="IDDiemDanh" />
-                <ScalarProperty Name="MaHS" ColumnName="MaHS" />
-                <ScalarProperty Name="TinhTrangDD" ColumnName="TinhTrangDD" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

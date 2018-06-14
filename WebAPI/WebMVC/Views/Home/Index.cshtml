@@ -6,35 +6,42 @@
     }
 }
 
-<div>
+<!--<div>
     <h1>Day la trang chu</h1>
-    <a href="@Url.Action("Logout","Login")">LogOut</a>
-    <h2>User Name : @Session["Username"].ToString()</h2>
-</div>
-@*<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    @if (Session["Username"]!=null)
+    {
+        <h2>User Name : @Session["Username"].ToString()</h2>
+    }
+</div>-->
+<div class="top" style="width: 1000px;height: 30px;margin: 0;padding: 0;">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+</div>
+<div id="main" style="width: 1000px;height: 400px;margin: 0;padding: 0;">
+    <div class="main-left" style="width: 150px;height: 400px;float: left;">
+        <h1>chứa thông tin học sinh + banner quảng cáo</h1>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="main-center" style="width: 700px;height: 400px;float: left;color: white;">
+        <div class="main-center-top" style="width: 700px;height: 200px;float: left;">
+            <div class="main-center-top-right" style="width: 300px;height: 200px;float: right;">
+                <input type="image" src="~/images/Diem.PNG" onclick="location.href='@Url.Action("Index", "HoaDon")'" />
+            </div>
+            <div class="main-center-top-left" style="width: 300px;height: 200px;float: left;">
+                <input type="image" src="~/images/thoikhoabieu.PNG" onclick="location.href='@Url.Action("Index", "HoaDon")'" />
+            </div>
+        </div>
+        <div class="main-center-bottom" style="width: 700px;height: 200px;float: left;">
+            <div class="main-center-bottom-right" style="width: 300px;height: 200px;float: right;">
+                <input type="image" src="~/images/hocphi.PNG" onclick="location.href='@Url.Action("Index", "HoaDon")'" />
+            </div>
+            <div class="main-center-bottom-left" style="width: 300px;height: 200px;float: left;">
+                <input type="image" src="~/images/bieudo.PNG" onclick="location.href='@Url.Action("Index", "HoaDon")'" />
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="main-right" style="width: 150px;height: 400px;float: left;">
+        <img src="~/images/quangcao2.jpg">
     </div>
-</div>*@
+</div>
+<div id="footer" style="width: 1000px;height: 200px;margin: 0;padding: 0;">
+    <img src="~/images/footer.JPG">
+</div>
