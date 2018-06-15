@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tztMaNQL = new System.Windows.Forms.TextBox();
+            this.txtMaNQL = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTenCS = new System.Windows.Forms.TextBox();
             this.txtMaCS = new System.Windows.Forms.TextBox();
@@ -37,17 +37,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tztMaNQL
+            // txtMaNQL
             // 
-            this.tztMaNQL.Location = new System.Drawing.Point(155, 317);
-            this.tztMaNQL.Name = "tztMaNQL";
-            this.tztMaNQL.Size = new System.Drawing.Size(175, 21);
-            this.tztMaNQL.TabIndex = 18;
+            this.txtMaNQL.Location = new System.Drawing.Point(155, 317);
+            this.txtMaNQL.Name = "txtMaNQL";
+            this.txtMaNQL.Size = new System.Drawing.Size(175, 21);
+            this.txtMaNQL.TabIndex = 18;
             // 
             // txtDiaChi
             // 
@@ -121,32 +121,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm thông tin";
             // 
-            // button1
+            // buttonX2
             // 
-            this.button1.Location = new System.Drawing.Point(143, 419);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Location = new System.Drawing.Point(291, 399);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(75, 23);
+            this.buttonX2.TabIndex = 23;
+            this.buttonX2.Text = "Cancel";
             // 
-            // button2
+            // buttonX1
             // 
-            this.button2.Location = new System.Drawing.Point(273, 419);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(70, 399);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(75, 23);
+            this.buttonX1.TabIndex = 24;
+            this.buttonX1.Text = "OK";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // ThemCoSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 468);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.tztMaNQL);
+            this.Controls.Add(this.buttonX1);
+            this.Controls.Add(this.buttonX2);
+            this.Controls.Add(this.txtMaNQL);
             this.Controls.Add(this.txtMaCS);
             this.Controls.Add(this.groupBox1);
             this.Name = "ThemCoSo";
@@ -161,7 +164,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tztMaNQL;
+        private System.Windows.Forms.TextBox txtMaNQL;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtTenCS;
         private System.Windows.Forms.TextBox txtMaCS;
@@ -170,7 +173,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private DevComponents.DotNetBar.ButtonX buttonX2;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
     }
 }

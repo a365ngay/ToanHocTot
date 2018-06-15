@@ -52,7 +52,7 @@ namespace WebAPIData.DAO
 
         public int Create(string MaLoptt, string TenLoptt, string MaGV, string MaCS, string MaTKB)
         {
-            string query = $"INSERT dbo.Loptt VALUES  ( '{MaLoptt}',  N'{TenLoptt}',  '{MaGV}',  '{MaCS}',  '{MaTKB}')";
+            string query = $"EXEC dbo.them_loptt '{MaLoptt}',  N'{TenLoptt}',  '{MaGV}',  '{MaCS}',  '{MaTKB}')";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -61,14 +61,14 @@ namespace WebAPIData.DAO
 
         public int Update(string MaLoptt, string TenLoptt, string MaGV, string MaCS, string MaTKB)
         {
-            string query = $"UPDATE dbo.Loptt SET TenLoptt = N'{TenLoptt}', MaGV = '{MaGV}', MaCS = '{MaCS}', MaTKB = '{MaTKB}' WHERE MaLoptt = '{MaLoptt}'";
+            string query = $"EXEC dbo.sua_loptt '{MaLoptt}' ,N'{TenLoptt}',  '{MaGV}', '{MaCS}', '{MaTKB}' ";
             DataProvider.Instance.ExecuteNonQuery(query);
             return 1;
         }
 
         public int Delete(string MaLoptt)
         {
-            string query = $"DELETE dbo.Loptt WHERE MaLoptt = '{MaLoptt}'";
+            string query = $"EXEC dbo.xoa_loptt '{MaLoptt}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 

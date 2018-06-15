@@ -30,29 +30,29 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaTKB = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaCS = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaGV = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTenLoptt = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaLoptt = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
+            this.txtTimKiem = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MaLoptt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenLoptt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaCS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaTKB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -84,25 +84,47 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonX1);
+            this.groupBox1.Controls.Add(this.buttonX3);
+            this.groupBox1.Controls.Add(this.buttonX2);
             this.groupBox1.Controls.Add(this.labelX5);
             this.groupBox1.Controls.Add(this.labelX4);
             this.groupBox1.Controls.Add(this.labelX3);
             this.groupBox1.Controls.Add(this.labelX2);
             this.groupBox1.Controls.Add(this.labelX1);
-            this.groupBox1.Controls.Add(this.textBoxX5);
-            this.groupBox1.Controls.Add(this.textBoxX4);
-            this.groupBox1.Controls.Add(this.buttonX3);
-            this.groupBox1.Controls.Add(this.buttonX2);
-            this.groupBox1.Controls.Add(this.buttonX1);
-            this.groupBox1.Controls.Add(this.textBoxX3);
-            this.groupBox1.Controls.Add(this.textBoxX2);
-            this.groupBox1.Controls.Add(this.textBoxX1);
+            this.groupBox1.Controls.Add(this.txtMaTKB);
+            this.groupBox1.Controls.Add(this.txtMaCS);
+            this.groupBox1.Controls.Add(this.txtMaGV);
+            this.groupBox1.Controls.Add(this.txtTenLoptt);
+            this.groupBox1.Controls.Add(this.txtMaLoptt);
             this.groupBox1.Location = new System.Drawing.Point(3, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(359, 557);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lớp học trung tâm";
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX3.Location = new System.Drawing.Point(278, 426);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Size = new System.Drawing.Size(75, 23);
+            this.buttonX3.TabIndex = 15;
+            this.buttonX3.Text = "Xóa";
+            this.buttonX3.Click += new System.EventHandler(this.buttonX3_Click);
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Location = new System.Drawing.Point(143, 426);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(75, 23);
+            this.buttonX2.TabIndex = 14;
+            this.buttonX2.Text = "Sửa";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
             // labelX5
             // 
@@ -144,91 +166,60 @@
             this.labelX1.TabIndex = 8;
             this.labelX1.Text = "Mã Lớp TT";
             // 
-            // textBoxX5
+            // txtMaTKB
             // 
             // 
             // 
             // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Location = new System.Drawing.Point(129, 322);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.Size = new System.Drawing.Size(202, 21);
-            this.textBoxX5.TabIndex = 7;
+            this.txtMaTKB.Border.Class = "TextBoxBorder";
+            this.txtMaTKB.Location = new System.Drawing.Point(129, 322);
+            this.txtMaTKB.Name = "txtMaTKB";
+            this.txtMaTKB.Size = new System.Drawing.Size(202, 21);
+            this.txtMaTKB.TabIndex = 7;
             // 
-            // textBoxX4
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Location = new System.Drawing.Point(129, 259);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.Size = new System.Drawing.Size(202, 21);
-            this.textBoxX4.TabIndex = 6;
-            // 
-            // buttonX3
-            // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Location = new System.Drawing.Point(256, 408);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(75, 23);
-            this.buttonX3.TabIndex = 5;
-            this.buttonX3.Text = "Xóa";
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Location = new System.Drawing.Point(129, 408);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(75, 23);
-            this.buttonX2.TabIndex = 4;
-            this.buttonX2.Text = "Sửa";
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(9, 408);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(75, 23);
-            this.buttonX1.TabIndex = 3;
-            this.buttonX1.Text = "Thêm";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
-            // 
-            // textBoxX3
+            // txtMaCS
             // 
             // 
             // 
             // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(129, 197);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(202, 21);
-            this.textBoxX3.TabIndex = 2;
+            this.txtMaCS.Border.Class = "TextBoxBorder";
+            this.txtMaCS.Location = new System.Drawing.Point(129, 259);
+            this.txtMaCS.Name = "txtMaCS";
+            this.txtMaCS.Size = new System.Drawing.Size(202, 21);
+            this.txtMaCS.TabIndex = 6;
             // 
-            // textBoxX2
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(129, 133);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(202, 21);
-            this.textBoxX2.TabIndex = 1;
-            // 
-            // textBoxX1
+            // txtMaGV
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Location = new System.Drawing.Point(129, 68);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(202, 21);
-            this.textBoxX1.TabIndex = 0;
+            this.txtMaGV.Border.Class = "TextBoxBorder";
+            this.txtMaGV.Location = new System.Drawing.Point(129, 197);
+            this.txtMaGV.Name = "txtMaGV";
+            this.txtMaGV.Size = new System.Drawing.Size(202, 21);
+            this.txtMaGV.TabIndex = 2;
+            // 
+            // txtTenLoptt
+            // 
+            // 
+            // 
+            // 
+            this.txtTenLoptt.Border.Class = "TextBoxBorder";
+            this.txtTenLoptt.Location = new System.Drawing.Point(129, 133);
+            this.txtTenLoptt.Name = "txtTenLoptt";
+            this.txtTenLoptt.Size = new System.Drawing.Size(202, 21);
+            this.txtTenLoptt.TabIndex = 1;
+            // 
+            // txtMaLoptt
+            // 
+            // 
+            // 
+            // 
+            this.txtMaLoptt.Border.Class = "TextBoxBorder";
+            this.txtMaLoptt.Location = new System.Drawing.Point(129, 68);
+            this.txtMaLoptt.Name = "txtMaLoptt";
+            this.txtMaLoptt.Size = new System.Drawing.Size(202, 21);
+            this.txtMaLoptt.TabIndex = 0;
             // 
             // splitContainer2
             // 
@@ -239,9 +230,9 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.textBoxX6);
-            this.splitContainer2.Panel1.Controls.Add(this.labelX6);
             this.splitContainer2.Panel1.Controls.Add(this.buttonX4);
+            this.splitContainer2.Panel1.Controls.Add(this.txtTimKiem);
+            this.splitContainer2.Panel1.Controls.Add(this.labelX6);
             // 
             // splitContainer2.Panel2
             // 
@@ -250,34 +241,35 @@
             this.splitContainer2.SplitterDistance = 156;
             this.splitContainer2.TabIndex = 0;
             // 
-            // textBoxX6
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Location = new System.Drawing.Point(250, 52);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.Size = new System.Drawing.Size(357, 21);
-            this.textBoxX6.TabIndex = 2;
-            // 
-            // labelX6
-            // 
-            this.labelX6.Location = new System.Drawing.Point(62, 49);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(147, 23);
-            this.labelX6.TabIndex = 1;
-            this.labelX6.Text = "Nhập thông tin tìm kiếm";
-            // 
             // buttonX4
             // 
             this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX4.Location = new System.Drawing.Point(568, 92);
+            this.buttonX4.Location = new System.Drawing.Point(363, 99);
             this.buttonX4.Name = "buttonX4";
             this.buttonX4.Size = new System.Drawing.Size(75, 23);
-            this.buttonX4.TabIndex = 0;
-            this.buttonX4.Text = "Tìm kiếm";
+            this.buttonX4.TabIndex = 3;
+            this.buttonX4.Text = "Tìm Kiếm";
+            this.buttonX4.Click += new System.EventHandler(this.buttonX4_Click);
+            // 
+            // txtTimKiem
+            // 
+            // 
+            // 
+            // 
+            this.txtTimKiem.Border.Class = "TextBoxBorder";
+            this.txtTimKiem.Location = new System.Drawing.Point(332, 53);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(357, 21);
+            this.txtTimKiem.TabIndex = 2;
+            // 
+            // labelX6
+            // 
+            this.labelX6.Location = new System.Drawing.Point(88, 50);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(174, 23);
+            this.labelX6.TabIndex = 1;
+            this.labelX6.Text = "Nhập thông tin tìm kiếm(Tên Lớp)";
             // 
             // dataGridView1
             // 
@@ -291,29 +283,34 @@
             this.MaTKB});
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(859, 411);
+            this.dataGridView1.Size = new System.Drawing.Size(834, 411);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // MaLoptt
             // 
+            this.MaLoptt.DataPropertyName = "MaLoptt";
             this.MaLoptt.HeaderText = "Mã Lớp TT";
             this.MaLoptt.Name = "MaLoptt";
             this.MaLoptt.Width = 150;
             // 
             // TenLoptt
             // 
+            this.TenLoptt.DataPropertyName = "TenLoptt";
             this.TenLoptt.HeaderText = "Tên Lớp TT";
             this.TenLoptt.Name = "TenLoptt";
             this.TenLoptt.Width = 150;
             // 
             // MaGV
             // 
+            this.MaGV.DataPropertyName = "MaGV";
             this.MaGV.HeaderText = "Mã Giáo Viên";
             this.MaGV.Name = "MaGV";
             this.MaGV.Width = 150;
             // 
             // MaCS
             // 
+            this.MaCS.DataPropertyName = "MaCS";
             this.MaCS.HeaderText = "Mã Cơ Sở";
             this.MaCS.Name = "MaCS";
             this.MaCS.Width = 150;
@@ -321,8 +318,20 @@
             // MaTKB
             // 
             this.MaTKB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaTKB.DataPropertyName = "MaTKB";
             this.MaTKB.HeaderText = "Mã TKB";
             this.MaTKB.Name = "MaTKB";
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(29, 426);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(75, 23);
+            this.buttonX1.TabIndex = 16;
+            this.buttonX1.Text = "Thêm";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // frmLopHoc
             // 
@@ -356,22 +365,22 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaTKB;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaCS;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaGV;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTenLoptt;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaLoptt;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTimKiem;
+        private DevComponents.DotNetBar.LabelX labelX6;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private DevComponents.DotNetBar.ButtonX buttonX3;
         private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
-        private DevComponents.DotNetBar.LabelX labelX6;
-        private DevComponents.DotNetBar.ButtonX buttonX4;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLoptt;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLoptt;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCS;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTKB;
+        private DevComponents.DotNetBar.ButtonX buttonX4;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
     }
 }

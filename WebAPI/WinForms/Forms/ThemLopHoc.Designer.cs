@@ -33,14 +33,14 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaTKB = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaCS = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaGV = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTenLoptt = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaLoptt = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.SuspendLayout();
             // 
             // labelX5
@@ -83,60 +83,60 @@
             this.labelX1.TabIndex = 18;
             this.labelX1.Text = "Mã Lớp TT";
             // 
-            // textBoxX5
+            // txtMaTKB
             // 
             // 
             // 
             // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Location = new System.Drawing.Point(169, 353);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.Size = new System.Drawing.Size(202, 21);
-            this.textBoxX5.TabIndex = 17;
+            this.txtMaTKB.Border.Class = "TextBoxBorder";
+            this.txtMaTKB.Location = new System.Drawing.Point(169, 353);
+            this.txtMaTKB.Name = "txtMaTKB";
+            this.txtMaTKB.Size = new System.Drawing.Size(202, 21);
+            this.txtMaTKB.TabIndex = 17;
             // 
-            // textBoxX4
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Location = new System.Drawing.Point(169, 290);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.Size = new System.Drawing.Size(202, 21);
-            this.textBoxX4.TabIndex = 16;
-            // 
-            // textBoxX3
+            // txtMaCS
             // 
             // 
             // 
             // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(169, 228);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(202, 21);
-            this.textBoxX3.TabIndex = 15;
+            this.txtMaCS.Border.Class = "TextBoxBorder";
+            this.txtMaCS.Location = new System.Drawing.Point(169, 290);
+            this.txtMaCS.Name = "txtMaCS";
+            this.txtMaCS.Size = new System.Drawing.Size(202, 21);
+            this.txtMaCS.TabIndex = 16;
             // 
-            // textBoxX2
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(169, 164);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(202, 21);
-            this.textBoxX2.TabIndex = 14;
-            // 
-            // textBoxX1
+            // txtMaGV
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Location = new System.Drawing.Point(169, 99);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(202, 21);
-            this.textBoxX1.TabIndex = 13;
+            this.txtMaGV.Border.Class = "TextBoxBorder";
+            this.txtMaGV.Location = new System.Drawing.Point(169, 228);
+            this.txtMaGV.Name = "txtMaGV";
+            this.txtMaGV.Size = new System.Drawing.Size(202, 21);
+            this.txtMaGV.TabIndex = 15;
+            // 
+            // txtTenLoptt
+            // 
+            // 
+            // 
+            // 
+            this.txtTenLoptt.Border.Class = "TextBoxBorder";
+            this.txtTenLoptt.Location = new System.Drawing.Point(169, 164);
+            this.txtTenLoptt.Name = "txtTenLoptt";
+            this.txtTenLoptt.Size = new System.Drawing.Size(202, 21);
+            this.txtTenLoptt.TabIndex = 14;
+            // 
+            // txtMaLoptt
+            // 
+            // 
+            // 
+            // 
+            this.txtMaLoptt.Border.Class = "TextBoxBorder";
+            this.txtMaLoptt.Location = new System.Drawing.Point(169, 99);
+            this.txtMaLoptt.Name = "txtMaLoptt";
+            this.txtMaLoptt.Size = new System.Drawing.Size(202, 21);
+            this.txtMaLoptt.TabIndex = 13;
             // 
             // groupBox1
             // 
@@ -147,16 +147,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm thông tin";
             // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(199, 438);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(75, 23);
-            this.buttonX1.TabIndex = 24;
-            this.buttonX1.Text = "OK";
-            // 
             // buttonX2
             // 
             this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -166,28 +156,41 @@
             this.buttonX2.Size = new System.Drawing.Size(75, 23);
             this.buttonX2.TabIndex = 25;
             this.buttonX2.Text = "Cancel";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(106, 438);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(75, 23);
+            this.buttonX1.TabIndex = 26;
+            this.buttonX1.Text = "OK";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // ThemLopHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 481);
-            this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.buttonX1);
+            this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.labelX5);
             this.Controls.Add(this.labelX4);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.textBoxX5);
-            this.Controls.Add(this.textBoxX4);
-            this.Controls.Add(this.textBoxX3);
-            this.Controls.Add(this.textBoxX2);
-            this.Controls.Add(this.textBoxX1);
+            this.Controls.Add(this.txtMaTKB);
+            this.Controls.Add(this.txtMaCS);
+            this.Controls.Add(this.txtMaGV);
+            this.Controls.Add(this.txtTenLoptt);
+            this.Controls.Add(this.txtMaLoptt);
             this.Controls.Add(this.groupBox1);
             this.Name = "ThemLopHoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemLopHoc";
+            this.Load += new System.EventHandler(this.ThemLopHoc_Load);
             this.ResumeLayout(false);
 
         }
@@ -199,13 +202,13 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaTKB;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaCS;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaGV;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTenLoptt;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaLoptt;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX buttonX2;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
     }
 }

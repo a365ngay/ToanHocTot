@@ -32,21 +32,22 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txtDC = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtGT = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTenNV = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaNV = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX7 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtL = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCV = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSDT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMaCS = new System.Windows.Forms.TextBox();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelX4
@@ -81,60 +82,49 @@
             this.labelX1.TabIndex = 15;
             this.labelX1.Text = "Mã NV";
             // 
-            // textBoxX4
+            // txtDC
             // 
             // 
             // 
             // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Location = new System.Drawing.Point(130, 238);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.Size = new System.Drawing.Size(176, 21);
-            this.textBoxX4.TabIndex = 14;
+            this.txtDC.Border.Class = "TextBoxBorder";
+            this.txtDC.Location = new System.Drawing.Point(130, 238);
+            this.txtDC.Name = "txtDC";
+            this.txtDC.Size = new System.Drawing.Size(176, 21);
+            this.txtDC.TabIndex = 14;
             // 
-            // textBoxX3
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(130, 179);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(176, 21);
-            this.textBoxX3.TabIndex = 13;
-            // 
-            // textBoxX2
+            // txtGT
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(130, 117);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(176, 21);
-            this.textBoxX2.TabIndex = 12;
+            this.txtGT.Border.Class = "TextBoxBorder";
+            this.txtGT.Location = new System.Drawing.Point(130, 179);
+            this.txtGT.Name = "txtGT";
+            this.txtGT.Size = new System.Drawing.Size(176, 21);
+            this.txtGT.TabIndex = 13;
             // 
-            // textBoxX1
-            // 
-            // 
+            // txtTenNV
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Location = new System.Drawing.Point(130, 55);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(176, 21);
-            this.textBoxX1.TabIndex = 11;
             // 
-            // comboBoxEx1
             // 
-            this.comboBoxEx1.DisplayMember = "Text";
-            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.ItemHeight = 15;
-            this.comboBoxEx1.Location = new System.Drawing.Point(489, 239);
-            this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(176, 21);
-            this.comboBoxEx1.TabIndex = 27;
+            this.txtTenNV.Border.Class = "TextBoxBorder";
+            this.txtTenNV.Location = new System.Drawing.Point(130, 117);
+            this.txtTenNV.Name = "txtTenNV";
+            this.txtTenNV.Size = new System.Drawing.Size(176, 21);
+            this.txtTenNV.TabIndex = 12;
+            // 
+            // txtMaNV
+            // 
+            // 
+            // 
+            // 
+            this.txtMaNV.Border.Class = "TextBoxBorder";
+            this.txtMaNV.Location = new System.Drawing.Point(130, 55);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(176, 21);
+            this.txtMaNV.TabIndex = 11;
             // 
             // labelX8
             // 
@@ -168,47 +158,55 @@
             this.labelX5.TabIndex = 23;
             this.labelX5.Text = "SĐT";
             // 
-            // textBoxX7
+            // txtL
             // 
             // 
             // 
             // 
-            this.textBoxX7.Border.Class = "TextBoxBorder";
-            this.textBoxX7.Location = new System.Drawing.Point(489, 179);
-            this.textBoxX7.Name = "textBoxX7";
-            this.textBoxX7.Size = new System.Drawing.Size(176, 21);
-            this.textBoxX7.TabIndex = 22;
+            this.txtL.Border.Class = "TextBoxBorder";
+            this.txtL.Location = new System.Drawing.Point(489, 179);
+            this.txtL.Name = "txtL";
+            this.txtL.Size = new System.Drawing.Size(176, 21);
+            this.txtL.TabIndex = 22;
             // 
-            // textBoxX6
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Location = new System.Drawing.Point(489, 114);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.Size = new System.Drawing.Size(176, 21);
-            this.textBoxX6.TabIndex = 21;
-            // 
-            // textBoxX5
+            // txtCV
             // 
             // 
             // 
             // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Location = new System.Drawing.Point(489, 55);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.Size = new System.Drawing.Size(176, 21);
-            this.textBoxX5.TabIndex = 20;
+            this.txtCV.Border.Class = "TextBoxBorder";
+            this.txtCV.Location = new System.Drawing.Point(489, 114);
+            this.txtCV.Name = "txtCV";
+            this.txtCV.Size = new System.Drawing.Size(176, 21);
+            this.txtCV.TabIndex = 21;
+            // 
+            // txtSDT
+            // 
+            // 
+            // 
+            // 
+            this.txtSDT.Border.Class = "TextBoxBorder";
+            this.txtSDT.Location = new System.Drawing.Point(489, 55);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(176, 21);
+            this.txtSDT.TabIndex = 20;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMaCS);
             this.groupBox1.Location = new System.Drawing.Point(27, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(694, 311);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin";
+            // 
+            // txtMaCS
+            // 
+            this.txtMaCS.Location = new System.Drawing.Point(463, 227);
+            this.txtMaCS.Name = "txtMaCS";
+            this.txtMaCS.Size = new System.Drawing.Size(175, 21);
+            this.txtMaCS.TabIndex = 0;
             // 
             // buttonX1
             // 
@@ -219,6 +217,7 @@
             this.buttonX1.Size = new System.Drawing.Size(75, 23);
             this.buttonX1.TabIndex = 29;
             this.buttonX1.Text = "OK";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // buttonX2
             // 
@@ -229,6 +228,7 @@
             this.buttonX2.Size = new System.Drawing.Size(75, 23);
             this.buttonX2.TabIndex = 30;
             this.buttonX2.Text = "Cancel";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
             // ThemNhanVien
             // 
@@ -237,26 +237,27 @@
             this.ClientSize = new System.Drawing.Size(751, 373);
             this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.buttonX1);
-            this.Controls.Add(this.comboBoxEx1);
             this.Controls.Add(this.labelX8);
             this.Controls.Add(this.labelX7);
             this.Controls.Add(this.labelX6);
             this.Controls.Add(this.labelX5);
-            this.Controls.Add(this.textBoxX7);
-            this.Controls.Add(this.textBoxX6);
-            this.Controls.Add(this.textBoxX5);
+            this.Controls.Add(this.txtL);
+            this.Controls.Add(this.txtCV);
+            this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.labelX4);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.textBoxX4);
-            this.Controls.Add(this.textBoxX3);
-            this.Controls.Add(this.textBoxX2);
-            this.Controls.Add(this.textBoxX1);
+            this.Controls.Add(this.txtDC);
+            this.Controls.Add(this.txtGT);
+            this.Controls.Add(this.txtTenNV);
+            this.Controls.Add(this.txtMaNV);
             this.Controls.Add(this.groupBox1);
             this.Name = "ThemNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemNhanVien";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -267,20 +268,20 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtDC;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtGT;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTenNV;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaNV;
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX7;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtL;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtCV;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSDT;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX buttonX2;
+        private System.Windows.Forms.TextBox txtMaCS;
     }
 }

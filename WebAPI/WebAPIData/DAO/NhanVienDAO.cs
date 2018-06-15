@@ -52,7 +52,7 @@ namespace WebAPIData.DAO
 
         public int Create(string MaNV, string TenNV, string GioiTinh, string DiaChi, string SoDT, string ChucVu, int Luong, string MaCS)
         {
-            string query = $"INSERT dbo.NhanVien VALUES  ( '{MaNV}',  N'{TenNV}',  N'{GioiTinh}',  N'{DiaChi}',  '{SoDT}',  N'{ChucVu}',  {Luong},  '{MaCS}')";
+            string query = $"EXEC dbo.them_nv '{MaNV}',  N'{TenNV}',  N'{GioiTinh}',  N'{DiaChi}',  '{SoDT}',  N'{ChucVu}',  {Luong},  '{MaCS}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -61,18 +61,34 @@ namespace WebAPIData.DAO
 
         public int Update(string MaNV, string TenNV, string GioiTinh, string DiaChi, string SoDT, string ChucVu, int Luong, string MaCS)
         {
-            string query = $"UPDATE dbo.NhanVien SET TenNV = N'{TenNV}', GioiTinh = N'{GioiTinh}', DiaChi = N'{DiaChi}', SoDT = '{SoDT}', ChucVu = N'{ChucVu}', Luong = {Luong}, MaCS = '{MaCS}' WHERE MaNV = '{MaNV}'";
+            string query = $"EXEC dbo.sua_nv '{MaNV}', N'{TenNV}', N'{GioiTinh}', N'{DiaChi}', '{SoDT}',  N'{ChucVu}',  {Luong}, '{MaCS}'";
             DataProvider.Instance.ExecuteNonQuery(query);
             return 1;
         }
 
         public int Delete(string MaNV)
         {
-            string query = $"DELETE dbo.NhanVien WHERE MaNV = '{MaNV}'";
+            string query = $"EXEC dbo.xoa_nv '{MaNV}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
             return 1;
+        }
+
+        public List<NhanVien> TimKiemNhanVien(string TenNV)
+        {
+            List<NhanVien> list = new List<NhanVien>();
+            string query = $"Select * From dbo.NhanVien Where TenNV= '{TenNV}'";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                NhanVien obj = new NhanVien(item);
+                list.Add(obj);
+            }
+
+            return list;
+
         }
     }
 }

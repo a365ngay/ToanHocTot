@@ -28,64 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaHS = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTenHS = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtL = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtLtt = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTruong = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.SuspendLayout();
             // 
-            // textBoxX1
+            // txtMaHS
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Location = new System.Drawing.Point(182, 100);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(182, 21);
-            this.textBoxX1.TabIndex = 12;
+            this.txtMaHS.Border.Class = "TextBoxBorder";
+            this.txtMaHS.Location = new System.Drawing.Point(182, 100);
+            this.txtMaHS.Name = "txtMaHS";
+            this.txtMaHS.Size = new System.Drawing.Size(182, 21);
+            this.txtMaHS.TabIndex = 12;
             // 
-            // textBoxX2
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(182, 171);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(182, 21);
-            this.textBoxX2.TabIndex = 13;
-            // 
-            // textBoxX3
+            // txtTenHS
             // 
             // 
             // 
             // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(182, 240);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(182, 21);
-            this.textBoxX3.TabIndex = 14;
+            this.txtTenHS.Border.Class = "TextBoxBorder";
+            this.txtTenHS.Location = new System.Drawing.Point(182, 171);
+            this.txtTenHS.Name = "txtTenHS";
+            this.txtTenHS.Size = new System.Drawing.Size(182, 21);
+            this.txtTenHS.TabIndex = 13;
             // 
-            // textBoxX5
-            // 
-            // 
+            // txtL
             // 
             // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Location = new System.Drawing.Point(182, 374);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.Size = new System.Drawing.Size(182, 21);
-            this.textBoxX5.TabIndex = 16;
+            // 
+            // 
+            this.txtL.Border.Class = "TextBoxBorder";
+            this.txtL.Location = new System.Drawing.Point(182, 240);
+            this.txtL.Name = "txtL";
+            this.txtL.Size = new System.Drawing.Size(182, 21);
+            this.txtL.TabIndex = 14;
+            // 
+            // txtLtt
+            // 
+            // 
+            // 
+            // 
+            this.txtLtt.Border.Class = "TextBoxBorder";
+            this.txtLtt.Location = new System.Drawing.Point(182, 374);
+            this.txtLtt.Name = "txtLtt";
+            this.txtLtt.Size = new System.Drawing.Size(182, 21);
+            this.txtLtt.TabIndex = 16;
             // 
             // labelX4
             // 
@@ -103,16 +103,16 @@
             this.labelX5.TabIndex = 11;
             this.labelX5.Text = "Lớp TT";
             // 
-            // textBoxX4
+            // txtTruong
             // 
             // 
             // 
             // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Location = new System.Drawing.Point(182, 306);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.Size = new System.Drawing.Size(182, 21);
-            this.textBoxX4.TabIndex = 15;
+            this.txtTruong.Border.Class = "TextBoxBorder";
+            this.txtTruong.Location = new System.Drawing.Point(182, 306);
+            this.txtTruong.Name = "txtTruong";
+            this.txtTruong.Size = new System.Drawing.Size(182, 21);
+            this.txtTruong.TabIndex = 15;
             // 
             // labelX1
             // 
@@ -147,43 +147,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin";
             // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(182, 459);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(75, 23);
-            this.buttonX1.TabIndex = 21;
-            this.buttonX1.Text = "OK";
-            // 
             // buttonX2
             // 
             this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Location = new System.Drawing.Point(315, 460);
+            this.buttonX2.Location = new System.Drawing.Point(289, 459);
             this.buttonX2.Name = "buttonX2";
             this.buttonX2.Size = new System.Drawing.Size(75, 23);
             this.buttonX2.TabIndex = 22;
             this.buttonX2.Text = "Cancel";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(105, 459);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(75, 23);
+            this.buttonX1.TabIndex = 23;
+            this.buttonX1.Text = "OK";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // ThemHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 523);
-            this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.buttonX1);
+            this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.textBoxX1);
-            this.Controls.Add(this.textBoxX2);
-            this.Controls.Add(this.textBoxX3);
-            this.Controls.Add(this.textBoxX5);
+            this.Controls.Add(this.txtMaHS);
+            this.Controls.Add(this.txtTenHS);
+            this.Controls.Add(this.txtL);
+            this.Controls.Add(this.txtLtt);
             this.Controls.Add(this.labelX4);
             this.Controls.Add(this.labelX5);
-            this.Controls.Add(this.textBoxX4);
+            this.Controls.Add(this.txtTruong);
             this.Controls.Add(this.groupBox1);
             this.Name = "ThemHocSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -194,18 +196,18 @@
 
         #endregion
 
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaHS;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTenHS;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtL;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtLtt;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTruong;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX buttonX2;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
     }
 }
