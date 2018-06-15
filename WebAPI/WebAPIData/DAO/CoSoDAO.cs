@@ -52,7 +52,7 @@ namespace WebAPIData.DAO
 
         public int Create(string MaCS, string TenCS, string DiaChi, string MaNQL)
         {
-            string query = $"INSERT dbo.CoSo VALUES  ( '{MaCS}',  N'{TenCS}',  N'{DiaChi}',  '{MaNQL}')";
+            string query = $"EXEC dbo.them_cs '{MaCS}',  N'{TenCS}',  N'{DiaChi}',  '{MaNQL}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -61,18 +61,33 @@ namespace WebAPIData.DAO
 
         public int Update(string MaCS, string TenCS, string DiaChi, string MaNQL)
         {
-            string query = $"UPDATE dbo.CoSo SET TenCS = N'{TenCS}', DiaChi = N'{DiaChi}', MaNQL = '{MaNQL}' WHERE MaCS = '{MaCS}'";
+            string query = $"EXEC dbo.sua_cs '{MaCS}' ,N'{TenCS}', N'{DiaChi}', '{MaNQL}' ";
             DataProvider.Instance.ExecuteNonQuery(query);
             return 1;
         }
 
         public int Delete(string MaCS)
         {
-            string query = $"DELETE dbo.CoSo WHERE MaCS = '{MaCS}'";
+            string query = $"EXEC dbo.xoa_cs '{MaCS}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
             return 1;
+        }
+        public List<CoSo> TimKiemCoSo(string TenCS)
+        {
+            List<CoSo> list = new List<CoSo>();
+            string query = $"Select * From dbo.CoSo Where TenCS= '{TenCS}'";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                CoSo obj = new CoSo(item);
+                list.Add(obj);
+            }
+
+            return list;
+
         }
     }
 }

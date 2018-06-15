@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    if (Session["Username"]==null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<!--<div>
+    <h1>Day la trang chu</h1>
+    @if (Session["Username"]!=null)
+    {
+        <h2>User Name : @Session["Username"].ToString()</h2>
+    }
+</div>-->
+<div class="top" style="width: 1000px;height: 30px;margin: 0;padding: 0;">
+
+</div>
+<div id="main" style="width: 1000px;height: 400px;margin: 0;padding: 0;">
+    <div class="main-left" style="width: 150px;height: 400px;float: left;">
+        <h1>chứa thông tin học sinh + banner quảng cáo</h1>
+    </div>
+    <div class="main-center" style="width: 700px;height: 400px;float: left;color: white;">
+        <div class="main-center-top" style="width: 700px;height: 200px;float: left;">
+            <div class="main-center-top-right" style="width: 300px;height: 200px;float: right;">
+                <input type="image" src="~/images/Diem.PNG" onclick="location.href='@Url.Action("Index", "HoaDon")'" />
+            </div>
+            <div class="main-center-top-left" style="width: 300px;height: 200px;float: left;">
+                <input type="image" src="~/images/thoikhoabieu.PNG" onclick="location.href='@Url.Action("Index", "HoaDon")'" />
+            </div>
+        </div>
+        <div class="main-center-bottom" style="width: 700px;height: 200px;float: left;">
+            <div class="main-center-bottom-right" style="width: 300px;height: 200px;float: right;">
+                <input type="image" src="~/images/hocphi.PNG" onclick="location.href='@Url.Action("Index", "HoaDon")'" />
+            </div>
+            <div class="main-center-bottom-left" style="width: 300px;height: 200px;float: left;">
+                <input type="image" src="~/images/bieudo.PNG" onclick="location.href='@Url.Action("Index", "HoaDon")'" />
+            </div>
+        </div>
+    </div>
+    <div class="main-right" style="width: 150px;height: 400px;float: left;">
+        <img src="~/images/quangcao2.jpg">
+    </div>
+</div>
+<div id="footer" style="width: 1000px;height: 200px;margin: 0;padding: 0;">
+    <img src="~/images/footer.JPG">
+</div>

@@ -38,12 +38,24 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        [Route("api/BangDiem/Del/{MaBangDiem}")]
+        [HttpDelete]
         public IHttpActionResult Delete([FromUri] string MaBangDiem)
         {
             if (MaBangDiem == "" || MaBangDiem == null)
                 return BadRequest("Not a valid bang diem");
             BangDiemDAO.Instance.Delete(MaBangDiem);
             return Ok();
+        }
+        [HttpGet]
+        public IHttpActionResult TimKiemBangDiem([FromUri]string MaBangDiem)
+        {
+            List<BangDiem> item = BangDiemDAO.Instance.TimKiemBangDiem(MaBangDiem);
+            if (item.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(item);
         }
     }
 }

@@ -32,5 +32,14 @@ namespace WebAPIData.DTO
         {
 
         }
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return true;
+            }
+            return false;
+        }
     }
 }
