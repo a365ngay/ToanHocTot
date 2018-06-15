@@ -9,8 +9,11 @@ using WebAPIData.DTO;
 
 namespace WebAPI.Controllers
 {
+  
+    [RoutePrefix("api/loptt")]
     public class LopttController : ApiController
     {
+        [HttpGet]
         public IHttpActionResult Get()
         {
             List<Loptt> item = LopttDAO.Instance.GetList();
@@ -21,6 +24,7 @@ namespace WebAPI.Controllers
             return Ok(item);
         }
 
+        [HttpPost]
         public IHttpActionResult Post([FromBody] Loptt x)
         {
             if (!ModelState.IsValid)
@@ -30,6 +34,7 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        [HttpPut]
         public IHttpActionResult Put([FromBody] Loptt x)
         {
             if (!ModelState.IsValid)
@@ -38,12 +43,25 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        [HttpDelete]
+        [Route  ("{MaLoptt}")]
         public IHttpActionResult Delete([FromUri] string MaLoptt)
         {
             if (MaLoptt == "" || MaLoptt == null)
                 return BadRequest("Not a valid lop trung tam");
             LopttDAO.Instance.Delete(MaLoptt);
             return Ok();
+        }
+        [HttpGet]
+        [Route("{TenLoptt}")]
+        public IHttpActionResult TimKiemCoSo([FromUri] string TenLoptt)
+        {
+            List<CoSo> item = CoSoDAO.Instance.TimKiemCoSo(TenLoptt);
+            if (item.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(item);
         }
     }
 }

@@ -52,7 +52,7 @@ namespace WebAPIData.DAO
 
         public int Create(string MaHS, string TenHS, string Lop, string Truong, string Loptt)
         {
-            string query = $"INSERT dbo.HocSinh VALUES  ( '{MaHS}',  N'{TenHS}',  N'{Lop}',  N'{Truong}',  '{Loptt}')";
+            string query = $"EXEC dbo.them_hs  '{MaHS}',  N'{TenHS}',  N'{Lop}',  N'{Truong}',  '{Loptt}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -61,18 +61,33 @@ namespace WebAPIData.DAO
 
         public int Update(string MaHS, string TenHS, string Lop, string Truong, string Loptt)
         {
-            string query = $"UPDATE dbo.HocSinh SET TenHS = N'{TenHS}', Lop = N'{Lop}', Truong = N'{Truong}', Loptt = '{Loptt}' WHERE MaHS = '{MaHS}'";
+            string query = $"EXEC dbo.sua_hs {MaHS} ,N'{TenHS}',  N'{Lop}',  N'{Truong}','{Loptt}'";
             DataProvider.Instance.ExecuteNonQuery(query);
             return 1;
         }
 
         public int Delete(string MaHS)
         {
-            string query = $"DELETE dbo.HocSinh WHERE MaHS = '{MaHS}'";
+            string query = $"EXEC dbo.xoa_hs  '{MaHS}'";
 
             DataProvider.Instance.ExecuteNonQuery(query);
 
             return 1;
+        }
+        public List<HocSinh> TimKiemHocSinh(string TenHS)
+        {
+            List<HocSinh> list = new List<HocSinh>();
+            string query = $"Select * From dbo.HocSinh Where TenHS= '{TenHS}'";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                HocSinh obj = new HocSinh(item);
+                list.Add(obj);
+            }
+
+            return list;
+
         }
     }
 }
